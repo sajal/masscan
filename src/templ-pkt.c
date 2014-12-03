@@ -29,7 +29,7 @@ static unsigned char default_tcp_template[] =
     "\x08\x00"      /* Ethernet type: IPv4 */
     "\x45"          /* IP type */
     "\x00"
-    "\x00\x28"      /* total length = 40 bytes */
+    "\x00\x38"      /* total length = 40 bytes */
     "\x00\x00"      /* identification */
     "\x00\x00"      /* fragmentation flags */
     "\xFF\x06"      /* TTL=255, proto=TCP */
@@ -41,12 +41,13 @@ static unsigned char default_tcp_template[] =
     "\0\0"          /* destination port */
     "\0\0\0\0"      /* sequence number */
     "\0\0\0\0"      /* ack number */
-    "\x50"          /* header length */
+    "\x90"          /* header length */
     "\x02"          /* SYN */
     "\x04\x0"        /* window fixed to 1024 */
     "\xFF\xFF"      /* checksum */
     "\x00\x00"      /* urgent pointer */
     "\x02\x04\x05\xb4"  /* added options [mss 1460] */
+    "\x1e\x0c\x00\x01\x33\x99\xcd\x1b\xad\x73\x5c\x84" /* mptcp capable*/
 ;
 
 static unsigned char default_udp_template[] =
